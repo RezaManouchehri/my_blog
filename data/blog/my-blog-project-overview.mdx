@@ -1,0 +1,140 @@
+---
+author: Reza Manouchehri
+title: My Blog Project: A Custom Next.js and MDX Blog
+date: 2025-06-01
+description: A comprehensive guide to my custom-built blog, created with Next.js, Tailwind CSS, and MDX for dynamic and engaging content.
+tags: [Next.js, Tailwind CSS, MDX, Blogging]
+---
+
+# My Blog Project: A Custom Next.js and MDX Blog
+
+This document provides an overview of my personal blog project, a modern and dynamic blogging platform I built from scratch using **Next.js**, **Tailwind CSS**, and **MDX**. Designed to showcase my content creation skills, this project combines the simplicity of Markdown with the power of React components to create an engaging, SEO-friendly, and responsive blog.
+
+## Project Overview
+
+My blog is a custom-built platform for sharing articles, tutorials, and personal stories. I developed it to explore modern web development technologies while creating a space for my ideas. The project uses **Next.js** for its server-side rendering and static site generation, **Tailwind CSS** for responsive styling, and **MDX** for flexible content authoring. With only four blog posts (including topics like photography in Canada and technical guides), the platform is lightweight yet powerful.
+
+## Key Features
+
+Here are the core features I implemented in my blog:
+
+### 1. MDX for Dynamic Content
+- I used **MDX**, a combination of Markdown and JSX, to write blog posts that support both simple text formatting and interactive React components.
+- Example: Embedding a custom button in a post:
+
+```jsx
+import { Button } from '../components/Button';
+
+# My Post
+Here's a custom button: <Button>Click Me!</Button>
+```
+
+- MDX files include frontmatter for metadata like title, date, and tags, stored in the `/data/blog` folder.
+
+### 2. Content Management
+- I organized blog posts in a dedicated `/data/blog` folder, where each post is an MDX file.
+- A custom content processing system parses MDX files and generates static pages using Next.js's static site generation (SSG).
+
+### 3. SEO and Performance
+- I implemented **SEO metadata** (e.g., title, description) in each post to improve search engine visibility.
+- The blog achieves high **Lighthouse scores** for performance and accessibility.
+- I added support for **RSS feeds** to make content easily accessible to subscribers.
+
+### 4. Tailwind CSS Styling
+- I chose **Tailwind CSS** for its utility-first approach, allowing me to create a responsive and modern design.
+- The blog supports **light and dark themes**, toggled automatically based on user preferences.
+- Custom styles are defined in a `styles/tailwind.css` file, with configuration in `tailwind.config.js`.
+
+### 5. Image Optimization
+- Images are optimized using Next.js's **Image** component, ensuring fast load times.
+- All images are stored in the `/public/images` folder and referenced in MDX files, like:
+
+```markdown
+![Photography in Canada](/images/canada.jpg)
+```
+
+### 6. Responsive Layouts
+- I designed multiple layouts for blog posts, including a standard layout with a sidebar and a simple layout for minimalistic posts.
+- The homepage features a list of all posts with tags for easy navigation.
+
+### 7. Code Highlighting
+- I integrated **Prism.js** for server-side syntax highlighting of code blocks in MDX files.
+- Example of a JavaScript code block:
+
+```javascript
+// A sample function
+function greet(name) {
+  return `Hello, ${name}!`;
+}
+```
+
+### 8. Search Functionality
+- I implemented a local search feature using a JSON-based index of posts, allowing users to quickly find content.
+- The search is accessible via a dialog box triggered by a keyboard shortcut.
+
+## Project Structure
+
+I organized the project with a clean and modular structure:
+
+- **`/app`**: Contains Next.js pages and layouts for the App Router.
+- **`/components`**: Custom React components, including reusable elements like buttons and alerts for MDX files.
+- **`/data/blog`**: Stores MDX files for blog posts.
+- **`/public`**: Holds static assets like images and favicon.
+- **`/styles`**: Includes Tailwind CSS styles and Prism.js for code highlighting.
+- **`tailwind.config.js`**: Configures Tailwind CSS with custom themes and typography.
+
+## How I Built the Blog
+
+1. **Setup Next.js**:
+   - I initialized a Next.js project with the App Router for modern routing and server components.
+   - Configured static site generation (SSG) for blog posts to ensure fast performance.
+
+2. **Integrated MDX**:
+   - Added `@next/mdx` to process MDX files.
+   - Created custom components to enhance MDX content, like buttons and alerts.
+
+3. **Styled with Tailwind CSS**:
+   - Installed Tailwind CSS and customized the theme to match my vision.
+   - Designed responsive layouts for desktop and mobile devices.
+
+4. **Content Creation**:
+   - Wrote four blog posts, including one about photography in Canada and a technical guide on MDX.
+   - Used frontmatter to organize metadata for each post.
+
+5. **Development Workflow**:
+   - Used `npm run dev` to test the blog locally at `http://localhost:3000`.
+   - Tested responsiveness and performance with browser developer tools.
+
+## Example Post
+
+Here's an example of how I structured an MDX post:
+
+```mdx
+---
+title: Photography in Canada
+date: 2025-06-01
+---
+
+# Photography in Canada
+
+This post showcases my favorite photos from Canada.
+
+![Lake Louise](/images/lake-louise.jpg)
+
+<Button>View Gallery</Button>
+```
+
+## Challenges and Solutions
+
+- **Challenge**: Rendering MDX files efficiently.
+  - **Solution**: Used `@next/mdx` with static generation to pre-render posts at build time.
+- **Challenge**: Creating a responsive design.
+  - **Solution**: Leveraged Tailwind CSS's utility classes to ensure compatibility across devices.
+- **Challenge**: Optimizing images for fast loading.
+  - **Solution**: Used Next.js Image component with lazy loading and automatic format conversion.
+
+## Conclusion
+
+This blog project is a reflection of my skills in modern web development. By combining **Next.js**, **Tailwind CSS**, and **MDX**, I created a fast, responsive, and content-rich platform for sharing my ideas. The project demonstrates my ability to build a full-stack application from scratch, manage content effectively, and optimize for performance and SEO. I plan to expand the blog with more posts and features in the future.
+
+Thank you for exploring my project!
